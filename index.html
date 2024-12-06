@@ -1,152 +1,98 @@
 <!DOCTYPE html>
 <html lang="en-ca">
   <head>
-    <title>Exercise 5: CSS Layout</title>
-    <meta charset="utf-8">
-  </head>
-  <style>
-    body {
-      font-family: arial;
-    }
+    <meta charset="UTF-8">
+    <title>Fiffy's Portfolio</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Yeseva+One&display=swap" rel="stylesheet">
 
-    p {
-      width: 600px;
-      padding-bottom: 20px;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Tangerine:wght@400;700&family=Yeseva+One&display=swap" rel="stylesheet">
+    <!-- End of Google fonts -->
+    <!-- Adobe font -->
+    <link rel="stylesheet" href="https://use.typekit.net/kfv5aql.css">
+    <link rel="stylesheet" href="https://use.typekit.net/kfv5aql.css">
+    <!-- End of Adobe font -->
+    <style>
+      body {
+        background-color: #837AB6;
+        background-image: linear-gradient(90deg, #837AB6, #CC8DB3);
+        width: 100%;
+      }
 
-    /* The Box Model */
-
-    #container1 {
-      width: 1000px;
-      background-color: transparent;
-      clear: both;
-      position: relative;
-      bottom: 20px;
-    }
-
-    #blockA {
-      background-color: #96C5F7;
-      width: 30.3%;
-      height: 303px;
-      display: inline;
-      float: left;
-      padding: 10px;
-    }
-
-    #blockB {
-      background-color: #A9D3FF;
-      width: 30.3%;
-      height: 303px;
-      display: inline;
-      float: left;
-      padding: 10px;
-      margin-left: 5px;
-      margin-right: 5px;
-    }
-
-    #blockC {
-      background-color: #F2F4FF;
-      width: 30.3%;
-      height: 293px;
-      display: inline;
-      float: left;
-      padding: 10px;
-      border: 5px solid #96C5F7;
-    }
-
-    /* Floating */
-
-    #container2 {
-      width: 100%;
-      height: 800px;
-      background-color: #D0D6B5;
-      clear: both;
-    }
-
-    #blockD {
-      width: 75%;
-      height: 200px;
-      background-color: #F9B5AC;
-      float: left;
-    }
-
-    #blockE {
-      width: 25%;
-      height: 200px;
-      background-color: #EE7674;
-      float: right;
-    }
-
-    /* Positioning */
-
-    #container3 {
-      width: 1000px;
-      height: 500px;
-      background-color: #2DE1C2;
-      clear: both;
-      position: relative;
-      top: 20px;
-    }
-
-    #blockG {
-      width: 333px;
-      height: 200px;
-      background-color: #7FBEAB;
-      display: inline-block;
-      position: relative;
-      margin-left: 50px;
-      margin-top: 50px;
+      #top {
+        background-color: #837AB6;
+        height: 80px;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
       
-    }
+      #nav {
+  width: 100%;
+  text-align: center;
+}
 
-    #blockH {
-      width: 333px;
-      height: 200px;
-      background-color: #7E998A;
-      display: inline-block;
-      position: fixed;
-      top: 45%;
-      left: 8px;
-    }
-  </style>
+      #nav a {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        font-size: 15px;
+      }
+      
+       #nav a:visited {
+        color: #FBE1E5;
+      }
+
+      #nav ul {
+        display: inline-block;
+        padding-top: 10px;
+        top: 30px;
+        text-align: center;
+        font-family: "Spectral SC", serif;
+        font-weight: 400;
+        font-style: normal;
+        margin-left: 5px
+      }
+
+      #nav li {
+        list-style: none;
+        display: inline-block;
+        margin-right: 40px;
+        padding: 2px 30px;
+        border: 1px solid white;
+        border-radius: 30px;
+      }
+
+      #nav li.contact {
+        background-color: #250E2C;
+        border: none;
+        padding: 4px 30px;
+      }
+
+      #nav li:hover {
+        background-color: #F6A5C0;
+        border: none;
+      }
+
+    </style>
+  </head>
+
 
   <body>
-
-    <h1>Exercise 5: CSS Layout</h1>
-    <p>This week you'll be exploring CSS Layout, which as per this week's lecture deck boils it down to three principals: the box model, floating, and positioning. Below, we're going to take a pass at them on their own&mdash;and in combination&mdash;to get a sense of the fundamentals. <strong><u>These are all a little tricky, and there is no 'right' way to solve them, there are several ways to get the results that have been asked for.</u></strong> Experiment and pay close attention, the 'floating' example, in particular, is the key to parcelling up a page with HTML/CSS.</p>
-
-    <!--Note how each of the solid coloured boxes we are working with this week are named with a custom ID. See the HTML ID tutorail on w3schools if this is new to you: https://www.w3schools.com/html/html_id.asp -->
-
-    <div id="container1">
-      <h2>The Box Model</h2>
-      <div id="blockA">
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
-      <div id="blockB">
-        Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-      </div>
-      <div id="blockC">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <div id="top">
+      <div id="nav">
+        <ul>
+          <li><a href="https://fiffy8.github.io/Final-Project/">HOME</a></li>
+          <li><a href="/">ABOUT ME</a></li>
+          <li><a href="/">RESUME</a></li>
+          <li><a href="/">PROJECTS</a></li>
+          <li class="contact"><a href="/">CONTACT</a></li>
+        </ul>
       </div>
     </div>
-
-    <div id="container2">
-      <h2>Floating</h2>
-      <div id="blockD">
-      </div>
-      <div id="blockE">
-      </div>
-    </div>
-
-    <div id="container3">
-      <h2>Positioning</h2>
-      <div id="blockG">
-      </div>
-      <div id="blockH">
-      </div>
-      <div id="blockI">
-      </div>
-    </div>
-
   </body>
 </html>
